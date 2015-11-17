@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Base64</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Base64</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	<script src="js/require.js"></script>
-	<script>
-		require(["js/base64"], function(base64){
-			base64.init();
-		})
-	</script>
+    <div class="container">
+        输入：
+        <textarea name="" id="source"></textarea>
+        <br>
+        <button id="convert">转换</button>
+        <br> 输出：
+        <textarea name="" id="target"></textarea>
+    </div>
+    <script src="js/require.js"></script>
+    <script>
+    require(["js/base64"], function(base64) {
+        // document.getElementById("convert").addEventListener("click", function({
+        //     // document.getElementById("target").value = base64.base64(document.getElementById("source").value);
+        // }), false);
+        var $ = document.getElementById;
+         document.getElementById("convert").addEventListener("click", function() {
+             document.getElementById("target").value = base64.base64( document.getElementById("source").value);
+             alert(base64.decodeBase64(document.getElementById("target").value));
+        })
+
+    })
+    </script>
 </body>
+
 </html>
