@@ -56,8 +56,10 @@ require(["./js/base64"], function(base) {
 		return new ImageData(ImageDataArray, imgWidth, imgHeight);
 
 	}
-
-	img = $("img");
-	$("imgData").value = img2Base64(img).substr(0,2000) + "\n太多了后面省略。。";
-	paint(base642img(img2Base64(img)));
+	window.addEventListener("load", function(){
+		img = $("img");
+		$("imgData").value = img2Base64(img).substr(0, 2000) + "\n太多了后面省略。。";
+		paint(base642img(img2Base64(img)));
+	}, false)
+	
 })
