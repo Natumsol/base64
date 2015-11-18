@@ -4,29 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Base64</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <h1 class="text-center">Base64 实验</h1>
     <div class="container">
-        输入：
-        <textarea name="" id="source"></textarea>
-        <br>
-        <button id="convert">转换</button>
-        <br> 输出：
-        <textarea name="" id="target"></textarea>
+        <h2>1. 字符串Base64编解码</h2>
+        <div class="row demo-wrapper1">
+            <div class="col-xs-5 ">
+                <textarea name="" id="source1" class="form form-control"></textarea>
+            </div>
+            <div class="col-xs-2 text-center btn-wrapper">
+                <button id="convert1" class="btn btn-success">字符串 -> Base64</button>
+            </div>
+            <div class="col-xs-5">
+                <textarea name="" id="target1" class="form form-control"></textarea>
+            </div>
+        </div>
+        <div class="row demo-wrapper1">
+            <div class="col-xs-5 ">
+                <textarea name="" id="source2" class="form form-control"></textarea>
+            </div>
+            <div class="col-xs-2 text-center btn-wrapper">
+                <button id="convert2" class="btn btn-danger">Base64 -> 字符串</button>
+            </div>
+            <div class="col-xs-5">
+                <textarea name="" id="target2" class="form form-control"></textarea>
+            </div>
+        </div>
+         <h2>2. 图片Base64编解码</h2>
+        <div class="row demo-wrapper text-center">
+            <div class="col-xs-4">
+                <h3>原图</h3>
+                <img src="./avatar.jpg" id="img" alt="">
+            </div>
+            <div class="col-xs-4">
+                <h3>Base64 编码数据</h3>
+                <textarea name="" id="imgData" class="form form-control"></textarea>
+            </div>
+            <div class="col-xs-4 clearfix">
+                <h3>解码数据</h3>
+                <canvas id="myCanvas" width="180" height="180"></canvas>
+            </div>
+        </div>
     </div>
     <script src="js/require.js"></script>
-    <script>
-    require(["js/base64"], function(base64) {
-
-        document.getElementById("convert").addEventListener("click", function() {
-            document.getElementById("target").value = base64.base64(document.getElementById("source").value);
-            alert(base64.decodeBase64(document.getElementById("target").value));
-        })
-
-    })
-    </script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
