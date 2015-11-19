@@ -1,3 +1,6 @@
+.container{
+	width:1024px !important;
+}
 .container .demo-wrapper1 {
     margin: 20px;
 }
